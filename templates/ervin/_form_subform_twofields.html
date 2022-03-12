@@ -1,0 +1,35 @@
+{% if firstfield.errors %}
+    <div class="formFieldErrors">
+        {{ firstfield.errors }}
+    </div>
+{% endif %}
+{% if secondfield.errors %}
+    <div class="formFieldErrors">
+        {{ secondfield.errors }}
+    </div>
+{% endif %}
+<div class="formFieldWrapper" {% if last %} data-last="last"{% endif %}>
+    <div class="formFieldLabel">
+        {% if forloop.first %}
+            {{ firstfield.label_tag }}
+        {% endif %}
+    </div>
+    <div class="formFieldWidget">
+        {{ firstfield }} 
+    </div>
+    <div class="formFieldLabelSibling">
+        {% if forloop.first %}
+            {{ secondfield.label_tag }} 
+        {% endif %}
+    </div>
+    <div class="formFieldWidgetSibling">
+        {{ secondfield }} 
+    </div>
+    <div class="formFieldDelete">
+        Delete{{ delete }}
+    </div>
+</div>
+
+{% comment %}
+# vim: ai et sts=4 sw=4 ts=4
+{% endcomment %}

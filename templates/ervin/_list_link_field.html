@@ -1,0 +1,5 @@
+{% if href > '' %}
+<div class="cell span{{ span }}"><a href="{{ url }}">{{ column }}</a></div>
+{% else %}
+<div class="cell span{{ span }}">{{ column }}</div>
+{% endif %}

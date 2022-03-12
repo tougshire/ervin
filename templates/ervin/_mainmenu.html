@@ -1,0 +1,29 @@
+        <div class="menuitem ">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        {% if user.is_authenticated %}
+          <div class="menuitem">
+            <a href="{% url 'person_list' %}">Community</a>
+          </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <div class="menuitem">
+            <a href="{% url 'estirequest_list' %}">Estimating Hub</a>
+          </div>
+        {% endif %}
+        {% if request.user.is_staff %}
+					<div class="menuitem">
+                <a href="{% url 'admin:index' %}" >Admin</a>
+					</div>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <div class="menuitem">
+              <a href="{% url 'logout'  %}?next={% url 'home' %}" >
+              log out {{ user.get_username }}
+            </a>
+          </div>
+        {% else %}
+          <div class="menuitem">
+            <a href="{% url 'login' %}" >Log In</a>
+          </div>
+        {% endif %}

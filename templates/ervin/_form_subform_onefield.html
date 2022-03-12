@@ -1,0 +1,22 @@
+{% if formfield.errors %}
+    <div class="formFieldErrors">
+        {{ formfield.errors }}
+    </div>
+{% endif %}
+<div class="formFieldWrapper" {% if last %} data-last="last"{% endif %}>
+    <div class="formFieldLabel">
+        {% if forloop.first %}
+            {{ formfield.label_tag }}
+        {% endif %}
+    </div>
+    <div class="formFieldWidget">
+        {{ formfield }} 
+    </div>
+    <div class="formFieldDelete">
+        Delete{{ delete }}
+    </div>
+</div>
+
+{% comment %}
+# vim: ai et sts=4 sw=4 ts=4
+{% endcomment %}

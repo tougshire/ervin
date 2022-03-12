@@ -1,0 +1,8 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+{% block field_sets %}
+<h2>Important: Adding a user to a permissions group is not the same as adding that user to a group within an app</h2>
+<h2 class="subhead">For example, to create an Esteem Salesperson for a user, <ul><li>add that user to the permission groups here, and also </li><li>create a salesperson in the esteem app.</li></ul></h2>
+
+{{ block.super }}
+{% endblock %}

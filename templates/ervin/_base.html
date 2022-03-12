@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+        Ervin Estimating Hub{% block app_title %}{% endblock %}
+	</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ervin/ervin.css' %}"/>
+    {% block headstyles %}
+    {% endblock %}
+    {% block headscripts %}
+    {% endblock %}
+</head>
+<body>
+<div id="container">
+    <div id="mainmenu" class="menubar">
+        {% include './_mainmenu.html' %}
+    </div>
+    <div id="page-header">
+        <div id="header-logo">
+            {% comment %}<img src="{% static '/ervin/spllogo.png' %}">{% endcomment %}
+        </div>
+        <div id="header-title">
+            <h1>
+               Ervin Estimating Hub 
+            </h1>
+        </div>
+    </div>
+    <div id="appmenu" class="menubar">
+        {% block appmenu %}
+        {% endblock %}
+    </div>
+    <div id="appheader">
+        {% block appheader %}
+        {% endblock %}
+    </div>
+    <div id="objectmenu" class="menubar">
+        {% block objectmenu %}
+        {% endblock %}
+    </div>
+    <div id="objectheader">
+        {% block objectheader %}
+        {% endblock %}
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+{% block javascript %}
+{% endblock %}
+</body>
+</html>
+{% comment %}
+vim: ai et sts=4 sw=4 ts=4
+{% endcomment %}
