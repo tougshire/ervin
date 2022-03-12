@@ -28,7 +28,6 @@ DEBUG = env('DEBUG')=='True'
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,8 +51,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -105,11 +102,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_HOST_USER = 'postmaster@mg.tougshire.com'
-EMAIL_HOST_PASSWORD = 'e581ca73e5a6fc866926c87f9fc3d571-2af183ba-54aab879'
-EMAIL_PORT = 587
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_FILE_PATH = env('EMAIL_FILE_PATH') # for testing
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
