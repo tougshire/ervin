@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from .forms import ErvinUserCreationForm, ErvinUserChangeForm
-from .models import ErvinUser, ErvinGroup
+from .models import Company, ErvinUser, ErvinGroup
 from django.contrib.auth.models import Group
 
 
@@ -21,6 +21,7 @@ class ErvinUserAdmin(UserAdmin):
                     "is_active",
                     "is_staff",
                     "is_superuser",
+                    "company",
                     "groups",
                     "user_permissions",
                 ),
@@ -45,6 +46,8 @@ class ErvinGroupAdmin(GroupAdmin):
 admin.site.register(ErvinGroup, ErvinGroupAdmin)
 
 admin.site.unregister(Group)
+
+admin.site.register(Company)
 
 # vim sts=4 ts=4 sw=4 et ai
 
