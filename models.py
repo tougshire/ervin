@@ -46,6 +46,9 @@ class Company(models.Model):
         help_text="The color scheme to be used"
     )
 
+    class Meta:
+        verbose_name_plural="Companies"
+
     def __str__(self):
         return self.name
 
