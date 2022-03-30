@@ -4,9 +4,15 @@
 <link rel=stylesheet type="text/css" href="{% static 'registration/registration.css' %}">
 <title>Ervin Estimating  Hub</title>
 </head>
-<body style="background: url({% static './registration/ervin-architectural-products-300x300.jpg' %}); background-position:50% 0; background-repeat:no-repeat; background-size:auto 80vh; ">
+<body style="background: url({% static './registration/ervin_logo.jpg' %}); background-position:50% 0; background-repeat:no-repeat; background-size:auto 80vh; ">
 {% block content %}
 {% endblock %}
+<script>
+  params=(new URLSearchParams(window.location.search))
+  if(params.has('logo')) {
+    document.body.style.backgroundImage = document.body.style.backgroundImage.replace('static', 'media').replace('registration/','').replace('ervin_logo.jpg', params.get('logo'))
+  }
+</script>
 </body>
 </html>
 
